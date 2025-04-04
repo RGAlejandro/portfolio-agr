@@ -1,16 +1,15 @@
 ---
-import myPhoto from '../assets/MyPhoto.png'; // Reemplaza con la ruta a tu foto
+import myPhoto from '../assets/myPhoto.png';
+import Button from './Button.astro';
+import LinkedInIcon from './LinkedInIcon.astro';
+import GithubIcon from './GitHubIcon.astro';
+import MessageIcon from './MessageIcon.astro';
 ---
 
 <section class="w-full h-screen flex flex-col items-center justify-center bg-gray-50">
   <div class="text-center p-4">
-    <!-- Fotografía Personal -->
-    <img
-	src={myPhoto.src}
-	alt="Mi Foto"
-	class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto shadow-lg mb-6 transition-transform duration-300 hover:scale-120"
-	/>
-
+    <!-- Fotografía Personal con efecto hover -->
+    <img src={myPhoto.src} alt="Mi Foto" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto shadow-lg mb-6 transition-transform duration-300 hover:scale-110" />
 
     <!-- Mensaje de Bienvenida -->
     <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-800">
@@ -20,9 +19,23 @@ import myPhoto from '../assets/MyPhoto.png'; // Reemplaza con la ruta a tu foto
       Fullstack Developer | 2 años de experiencia
     </p>
 
-    <!-- Llamado a la Acción -->
-    <a href="#proyectos" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition-colors duration-300">
-      Ver Proyectos
-    </a>
+    <!-- Botones para LinkedIn y GitHub -->
+    <div class="flex justify-center gap-4">
+
+      <!-- <Button url="https://www.linkedin.com/in/alejandro-gemes-rubio-b4948a268/">
+        <LinkedInIcon slot="icon" />
+        LinkedIn
+      </Button>
+      <Button url="https://github.com/RGAlejandro">
+        <GithubIcon slot="icon" />
+        GitHub
+      </Button> -->
+
+	  <GithubIcon slot="icon" />
+	  <LinkedInIcon slot="icon" />
+	  
+    </div>
+
+	
   </div>
 </section>

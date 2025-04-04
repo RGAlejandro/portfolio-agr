@@ -1,0 +1,9 @@
+---
+// Recibimos las propiedades del skill
+const { name, background = "#EF652A", iconClass = "", tooltip = name } = Astro.props;
+---
+<li class="stack" style={`--background-dif: ${background};`}>
+  <p class="stack__name">{name}</p>
+  <tool-tip inert="true" role="tooltip" tip-position="top" aria-hidden="true">{tooltip}</tool-tip>
+  <span class={iconClass}></span>
+</li>

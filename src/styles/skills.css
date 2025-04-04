@@ -1,0 +1,63 @@
+.stack {
+    position: relative;
+    width: 3.3em;
+    height: 3.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    background: var(--background-dif); /* Aquí usas la variable para el fondo */
+    border-radius: 50%; /* Para que sea un círculo */
+    overflow: hidden;
+  }
+  
+  /* Estilos para el nombre del skill */
+  .stack__name {
+    position: absolute;
+    bottom: -1.2em;
+    font-size: 0.8em;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 0.2em 0.5em;
+    border-radius: 0.3em;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Opcional: Mostrar el nombre al pasar el ratón */
+  .stack:hover .stack__name {
+    opacity: 1;
+  }
+  
+  /* Estilos para el tooltip (ejemplo básico) */
+  tool-tip {
+    display: none;
+  }
+  
+  .stack:hover tool-tip {
+    display: block;
+    position: absolute;
+    top: -2em;
+    background: #333;
+    color: #fff;
+    padding: 0.3em 0.6em;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+  }
+  
+  /* Ejemplo de icono con imagen de fondo (puedes personalizar según necesites) */
+  .icon-HTML {
+    width: 1.8em;
+    height: 1.8em;
+    background: url('/assets/html-logo.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
