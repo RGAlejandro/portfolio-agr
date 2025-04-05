@@ -1,41 +1,90 @@
 ---
 import myPhoto from '../assets/myPhoto.png';
-import Button from './Button.astro';
-import LinkedInIcon from './LinkedInIcon.astro';
 import GithubIcon from './GitHubIcon.astro';
+import LinkedInIcon from './LinkedInIcon.astro';
 import MessageIcon from './MessageIcon.astro';
 ---
 
-<section class="w-full h-screen flex flex-col items-center justify-center bg-gray-50">
-  <div class="text-center p-4">
-    <!-- Fotografía Personal con efecto hover -->
-    <img src={myPhoto.src} alt="Mi Foto" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto shadow-lg mb-6 transition-transform duration-300 hover:scale-110" />
+<section class="w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-50 px-8">
+  <!-- Lado Izquierdo: Foto + mensaje breve -->
+  <div class="md:w-1/3 flex flex-col items-start md:items-start text-left mb-10 md:mb-0">
 
-    <!-- Mensaje de Bienvenida -->
-    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-800">
-      Hola, soy Alejandro Gemes
+    <h1 class="text-3xl md:text-6xl font-extrabold text-gray-800 mb-2">
+      ¡Hola! Soy Alejandro
     </h1>
-    <p class="text-xl md:text-2xl text-gray-600 mb-8">
+    <p class="text-lg text-gray-600 mb-4 mt-4 animated-yellow font-semibold">
       Fullstack Developer | 2 años de experiencia
     </p>
+    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-12">
+      Soy <span class="highlight">Alejandro</span>, un desarrollador web apasionado por construir 
+      experiencias digitales que no solo funcionen, sino que <span class="highlight">emocionen</span>. 
+      Me encanta moverme entre el <span class="highlight">Front-end</span> y el <span class="highlight">Back-end</span> como quien 
+      cambia de instrumento en una banda: buscando siempre el ritmo perfecto entre <span class="highlight">lógica</span> y 
+      <span class="highlight">estética</span>.
+    </p>
 
-    <!-- Botones para LinkedIn y GitHub -->
-    <div class="flex justify-center gap-4">
+  </div>
 
-      <!-- <Button url="https://www.linkedin.com/in/alejandro-gemes-rubio-b4948a268/">
-        <LinkedInIcon slot="icon" />
-        LinkedIn
-      </Button>
-      <Button url="https://github.com/RGAlejandro">
-        <GithubIcon slot="icon" />
-        GitHub
-      </Button> -->
-
-	  <GithubIcon slot="icon" />
-	  <LinkedInIcon slot="icon" />
-	  
+  <!-- Lado Derecho: Mensaje de presentación original -->
+  <div class="md:w-1/2 max-w-xl mt-5 ml-10">
+    <img src={myPhoto.src} alt="Mi Foto" class="w-32 h-32 md:w-60 md:h-60 rounded-full shadow-xl mb-6 transition-transform duration-300 hover:scale-105" />
+    
+    <!-- Iconos -->
+    <div class="ml-10 flex gap-6">
+      <a href="https://github.com/RGAlejandro" target="_blank"><GithubIcon /></a>
+      <a href="https://www.linkedin.com/in/alejandro-gemes-rubio-b4948a268/" target="_blank"><LinkedInIcon /></a>
+      <a href="mailto:alejandro@email.com">
+        <MessageIcon />
+      </a>
     </div>
-
-	
   </div>
 </section>
+<style>
+  .highlight {
+  position: relative;
+  font-weight: bold;
+  /* Fondo de resaltado suave */
+  background-image: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.highlight:hover {
+  background-size: 100% 88%;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #fbbf24;  (color amarillo suave)
+  transition: width 0.3s ease-in-out;
+}
+.highlight:hover::after {
+  width: 100%;
+}
+
+.animated-yellow {
+  animation: glowText 2.5s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(245,158,11,0.5), 
+      0 0 10px rgba(245,158,11,0.5),
+      0 0 15px rgba(245,158,11,0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(245,158,11,1), 
+      0 0 30px rgba(245,158,11,1),
+      0 0 40px rgba(245,158,11,1);
+  }
+}
+</style>
