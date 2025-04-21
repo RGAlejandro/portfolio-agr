@@ -1,0 +1,76 @@
+---
+---
+<section id="sobremi" class="max-w-4xl mx-auto my-16 px-4">
+    <h2
+      class="text-3xl md:text-5xl font-extrabold text-center mb-8 text-gray-800"
+    >
+      Sobre mi
+    </h2>
+    <div class="md:flex md:items-center md:space-x-8">
+      <!-- Imagen con halo amarillo -->
+      <div class="mb-6 md:mb-0 flex-shrink-0">
+        <div class="relative w-40 h-40 rounded-full bg-yellow-100/20 p-1 animate-pulse-slow">
+          <img
+            src="/src/assets/MyPhoto.png"
+            alt="Mi foto"
+            class="w-full h-full object-cover rounded-full border-4 border-yellow-500"
+          />
+          <span
+            class="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(255,203,0,0.6)] animate-ping-slow"
+          ></span>
+        </div>
+      </div>
+  
+      <!-- Texto de presentación -->
+      <div class="space-y-4">
+        
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-12">
+          ¡Hola! Soy Alejandro, un desarrollador apasionado por crear experiencias
+          web fluidas y elegantes. Me encanta combinar un diseño limpio con
+          pequeños toques de color amarillo para destacar lo esencial.
+        </p>
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-12">
+          Además de código, disfruto del diseño gráfico y la fotografía, lo que me
+          ayuda a aportar un enfoque creativo a cada proyecto.
+        </p>
+  
+        <!-- Mis pasiones en etiquetas interactivas -->
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transition">
+            Diseño UI/UX
+          </span>
+          <span class="px-3 py-1 rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transition">
+            Fotografía
+          </span>
+          <span class="px-3 py-1 rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transition">
+            Open Source
+          </span>
+          <span class="px-3 py-1 rounded-full bg-yellow-500 text-white hover:bg-yellow-600 transition">
+            Viajes
+          </span>
+        </div>
+  
+        <!-- Botón de descarga de CV -->
+        <a
+          href="/assets/CV_Alejandro.pdf"
+          download
+          class="inline-block mt-4 px-6 py-2 border-2 border-yellow-500 text-yellow-600 font-semibold rounded-lg hover:bg-yellow-500 hover:text-white transition"
+        >
+          Descargar CV
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <style is:global>
+    @keyframes ping-slow {
+      75%, 100% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+    }
+    .animate-ping-slow {
+      animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+  </style>
+  

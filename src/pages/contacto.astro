@@ -1,0 +1,48 @@
+
+<h2
+      class="text-3xl md:text-5xl font-extrabold text-center mb-8 text-gray-800"
+    >
+      Contacto
+    </h2>
+
+<section class="max-w-md mx-auto my-8 p-4 bg-gray-50 rounded-lg shadow-lg flex items-center space-x-0 sm:space-x-2">
+
+    <!-- Input de solo lectura con el correo -->
+    <input
+      type="text"
+      readonly
+      value="rubiogemesalejandro@gmail.com"
+      class="flex-1 py-2 px-4 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-yellow-500"
+    />
+    <!-- Botón para copiar el correo -->
+    <button
+      id="copy-button"
+      class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold px-4 py-2 rounded-r transition-transform duration-300 transform hover:scale-105"
+    >
+      Copiar
+    </button>
+  </section>
+  
+  <script>
+    const copyButton = document.getElementById("copy-button");
+    copyButton?.addEventListener("click", () => {
+      const email = "rubiogemesalejandro@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        // Cambia el texto del botón a "¡Copiado!" y luego lo restaura
+        const originalText = copyButton.textContent;
+        copyButton.textContent = "¡Copiado!";
+        setTimeout(() => {
+          copyButton.textContent = originalText;
+        }, 2000);
+      }).catch((err) => {
+        console.error("Error copiando el correo:", err);
+      });
+    });
+  </script>
+  
+  <style is:global>
+    /* Puedes ajustar o extender estos estilos para personalizar el input o el botón */
+    input:focus {
+      outline: none;
+    }
+  </style>
