@@ -1,0 +1,43 @@
+<!-- pages/proyectos.astro -->
+---
+import ProjectCard from '../components/CardProyecto.astro';
+
+const projects = [
+  {
+    title: 'Mi Tienda Online',
+    description: 'E-commerce construido con Astro y Stripe para pagos.',
+    image: '/assets/tienda.png',
+    link: 'https://mi-tienda.com',
+    techs: ['Astro', 'JavaScript', 'Stripe', 'Tailwind CSS'],
+  },
+  {
+    title: 'Blog Tecnológico',
+    description: 'Blog estático con Markdown y Prism para resaltado de código.',
+    image: '/assets/blog.png',
+    link: 'https://mi-blog.com',
+    techs: ['Astro', 'Markdown', 'Prism.js'],
+  },
+  {
+    title: 'Dashboard Analítico',
+    description: 'Visualización de datos con Recharts y React.',
+    image: '/assets/dashboard.png',
+    link: 'https://dashboard-analitico.com',
+    techs: ['React', 'Recharts', 'TypeScript'],
+  },
+];
+---
+
+<section id="proyectos" class="container mx-auto py-16">
+  <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-800 dark:text-gray-100">Proyectos Destacados</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map(project => (
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        link={project.link}
+        techs={project.techs}
+      />
+    ))}
+  </div>
+</section>
